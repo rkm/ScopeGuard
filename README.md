@@ -35,7 +35,7 @@ public void Foo(MyObj guarded)
 
 ArmedScopeGuard runs the provided callback on any return path, unlesss its `Disarm` method is called. This can be useful in cases where you have one or more "successful" return paths.
 
-```
+```c#
 public void Foo(MyObj guarded)
 {
     using var asg = new ArmedScopeGuard(() => { guarded.HasDescoped = true; });
