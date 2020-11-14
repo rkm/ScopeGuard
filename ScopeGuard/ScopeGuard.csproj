@@ -5,6 +5,6 @@
     <Description>https://github.com/rkm/ScopeGuard</Description>
     <PackageLicenseExpression>BSD-2-Clause</PackageLicenseExpression>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>1.0.1</Version>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 </Project>

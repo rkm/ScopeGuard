@@ -27,14 +27,14 @@ jobs:
       steps:
           - task: DotNetCoreCLI@2
             inputs:
-                command: pack
-                packagesToPack: ScopeGuard/ScopeGuard.csproj
-                packDirectory: $(Build.ArtifactStagingDirectory)
+                command: "pack"
+                packagesToPack: "ScopeGuard/ScopeGuard.csproj"
+                includesymbols: true
                 versioningScheme: "off"
-                buildProperties: "-c Release"
-          - task: DotNetCoreCLI@2
+                buildProperties: "Configuration=Release"
+          - task: NuGetCommand@2
             inputs:
                 command: "push"
-                packagesToPush: "$(Build.ArtifactStagingDirectory)/*.nupkg"
+                packagesToPush: "$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg"
                 nuGetFeedType: "external"
                 publishFeedCredentials: "Push Rkm.ScopeGuard from Azure Pipelines"
