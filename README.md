@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/ruairidh/ScopeGuard/_apis/build/status/rkm.ScopeGuard?repoName=rkm%2FScopeGuard&branchName=main)](https://dev.azure.com/ruairidh/ScopeGuard/_build/latest?definitionId=3&repoName=rkm%2FScopeGuard&branchName=main)
+
 # Scope Guard
 
 A simple C# implementation of a Scope Guard, with an "Armed" variant.
