@@ -1,9 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Authors>rkm</Authors>
-    <PackageId>Rkm.ScopeGuard</PackageId>
     <Description>https://github.com/rkm/ScopeGuard</Description>
+    <PackageId>Rkm.ScopeGuard</PackageId>
     <PackageLicenseExpression>BSD-2-Clause</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/rkm/ScopeGuard</RepositoryUrl>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Version>1.1.0</Version>
   </PropertyGroup>
