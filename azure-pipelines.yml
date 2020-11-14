@@ -1,6 +1,9 @@
 ---
 trigger:
-    - "*"
+    branches:
+        include: ["*"]
+    tags:
+        include: ["*"]
 
 resources:
     repositories:
