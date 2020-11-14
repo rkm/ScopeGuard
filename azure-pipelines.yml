@@ -22,16 +22,16 @@ jobs:
       condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/')
       dependsOn: [precommit, test]
       steps:
-        - task: DotNetCoreCLI@2
-          inputs:
-            command: pack
-            packagesToPack: ScopeGuard/ScopeGuard.csproj
-            packDirectory: $(Build.ArtifactStagingDirectory)
-            versioningScheme: 'off'
-            buildProperties: '-c Release'
-        - task: DotNetCoreCLI@2
-          inputs:
-            command: 'push'
-            packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-            nuGetFeedType: 'external'
-            publishFeedCredentials: 'Push Rkm.ScopeGuard from Azure Pipelines'    
+          - task: DotNetCoreCLI@2
+            inputs:
+                command: pack
+                packagesToPack: ScopeGuard/ScopeGuard.csproj
+                packDirectory: $(Build.ArtifactStagingDirectory)
+                versioningScheme: "off"
+                buildProperties: "-c Release"
+          - task: DotNetCoreCLI@2
+            inputs:
+                command: "push"
+                packagesToPush: "$(Build.ArtifactStagingDirectory)/*.nupkg"
+                nuGetFeedType: "external"
+                publishFeedCredentials: "Push Rkm.ScopeGuard from Azure Pipelines"
