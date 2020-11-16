@@ -14,7 +14,7 @@ resources:
           ref: refs/tags/v2.1.0
 
 jobs:
-    - template: job--pre-commit.yml@asottile
+    # - template: job--pre-commit.yml@asottile
     - job: test
       steps:
           - task: DotNetCoreCLI@2
@@ -23,7 +23,7 @@ jobs:
     - job: publish
       displayName: Publish tagged releases
       condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/')
-      dependsOn: [precommit, test]
+      dependsOn: [test] # [precommit, test]
       steps:
           - task: DotNetCoreCLI@2
             inputs:
