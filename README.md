@@ -1,5 +1,5 @@
 [![Build Status](https://dev.azure.com/ruairidh/ScopeGuard/_apis/build/status/rkm.ScopeGuard?repoName=rkm%2FScopeGuard&branchName=main)](https://dev.azure.com/ruairidh/ScopeGuard/_build/latest?definitionId=3&repoName=rkm%2FScopeGuard&branchName=main)
-![Nuget](https://img.shields.io/nuget/v/Rkm.ScopeGuard)
+[![Nuget](https://img.shields.io/nuget/v/Rkm.ScopeGuard)](https://www.nuget.org/packages/Rkm.ScopeGuard)
 ![GitHub](https://img.shields.io/github/license/rkm/ScopeGuard)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/rkm/ScopeGuard/main.svg)](https://results.pre-commit.ci/latest/github/rkm/ScopeGuard/main)
