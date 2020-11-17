@@ -12,6 +12,12 @@ Scope guards are useful in methods which have complex logic paths, where you nee
 
 These are implemented as `IDisposable`s in C#, so the callback provided will be called as soon as the guard goes out of scope. They can therefore also be used in anonymous blocks.
 
+## Installation
+
+```console
+> dotnet add package Rkm.ScopeGuard
+```
+
 ## Usage
 
 The below examples use the C# 8.0 variant of the `using` statement, which doesn't require braces and uses the end of the method as the scope boundary.
