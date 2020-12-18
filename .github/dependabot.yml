@@ -1,0 +1,13 @@
+---
+
+version: 2
+
+updates:
+  - package-ecosystem: nuget
+    directory: ScopeGuard/
+    schedule:
+      interval: daily
+  - package-ecosystem: nuget
+    directory: ScopeGuard.Test/
+    schedule:
+      interval: daily
