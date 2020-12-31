@@ -1,40 +1,40 @@
 ---
 trigger:
-    branches:
-        include: ["*"]
-    tags:
-        include: ["*"]
+  branches:
+    include: ["*"]
+  tags:
+    include: ["*"]
 
 resources:
-    repositories:
-        - repository: asottile
-          type: github
-          endpoint: github
-          name: asottile/azure-pipeline-templates
-          ref: refs/tags/v2.1.0
+  repositories:
+    - repository: asottile
+      type: github
+      endpoint: github
+      name: asottile/azure-pipeline-templates
+      ref: refs/tags/v2.1.0
 
 jobs:
-    # - template: job--pre-commit.yml@asottile
-    - job: test
-      steps:
-          - task: DotNetCoreCLI@2
-            inputs:
-                command: "test"
-    - job: publish
-      displayName: Publish tagged releases
-      condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/')
-      dependsOn: [test] # [precommit, test]
-      steps:
-          - task: DotNetCoreCLI@2
-            inputs:
-                command: "pack"
-                packagesToPack: "ScopeGuard/ScopeGuard.csproj"
-                includesymbols: true
-                versioningScheme: "off"
-                buildProperties: "Configuration=Release"
-          - task: NuGetCommand@2
-            inputs:
-                command: "push"
-                packagesToPush: "$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg"
-                nuGetFeedType: "external"
-                publishFeedCredentials: "Push Rkm.ScopeGuard from Azure Pipelines"
+  # - template: job--pre-commit.yml@asottile
+  - job: test
+    steps:
+      - task: DotNetCoreCLI@2
+        inputs:
+          command: "test"
+  - job: publish
+    displayName: Publish tagged releases
+    condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/')
+    dependsOn: [test] # [precommit, test]
+    steps:
+      - task: DotNetCoreCLI@2
+        inputs:
+          command: "pack"
+          packagesToPack: "ScopeGuard/ScopeGuard.csproj"
+          includesymbols: true
+          versioningScheme: "off"
+          buildProperties: "Configuration=Release"
+      - task: NuGetCommand@2
+        inputs:
+          command: "push"
+          packagesToPush: "$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg"
+          nuGetFeedType: "external"
+          publishFeedCredentials: "Push Rkm.ScopeGuard from Azure Pipelines"

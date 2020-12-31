@@ -8,9 +8,12 @@
 
 A simple C# implementation of a Scope Guard, with an "Armed" variant.
 
-Scope guards are useful in methods which have complex logic paths, where you need to ensure a block of code is executed on every return path.
+Scope guards are useful in methods which have complex logic paths, where you
+need to ensure a block of code is executed on every return path.
 
-These are implemented as `IDisposable`s in C#, so the callback provided will be called as soon as the guard goes out of scope. They can therefore also be used in anonymous blocks.
+These are implemented as `IDisposable`s in C#, so the callback provided will be
+called as soon as the guard goes out of scope. They can therefore also be used
+in anonymous blocks.
 
 ## Installation
 
@@ -20,7 +23,8 @@ These are implemented as `IDisposable`s in C#, so the callback provided will be 
 
 ## Usage
 
-The below examples use the C# 8.0 variant of the `using` statement, which doesn't require braces and uses the end of the method as the scope boundary.
+The below examples use the C# 8.0 variant of the `using` statement, which
+doesn't require braces and uses the end of the method as the scope boundary.
 
 ### ScopeGuard
 
@@ -39,7 +43,9 @@ public void Foo(MyObj guarded)
 
 ### ArmedScopeGuard
 
-ArmedScopeGuard runs the provided callback on any return path, unlesss its `Disarm` method is called. This can be useful in cases where you have one or more "successful" return paths.
+ArmedScopeGuard runs the provided callback on any return path, unlesss its
+`Disarm` method is called. This can be useful in cases where you have one or
+more "successful" return paths.
 
 ```c#
 public void Foo(MyObj guarded)
@@ -80,4 +86,6 @@ public void Parse(Parser parser)
 
 ## Kudos
 
-This is a port of the `AK/ScopeGuard.h` implementation from the excellent [SerenityOS](https://github.com/SerenityOS) project. The BSD 2-Clause License is therefore retained.
+This is a port of the `AK/ScopeGuard.h` implementation from the excellent
+[SerenityOS](https://github.com/SerenityOS) project. The BSD 2-Clause License is
+therefore retained.
