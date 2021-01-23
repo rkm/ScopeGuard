@@ -42,3 +42,8 @@ repos:
   #   hooks:
   #       - id: yamllint
   #         args: [-c, .meta/yamllint.yaml]
+  - repo: https://github.com/rkm/mirrors-dotnet-format
+    rev: "743494219718c4326530d05a8b083e620d24f021"
+    hooks:
+      - id: dotnet-format
+        args: [--include]
