@@ -1,4 +1,4 @@
-namespace ScopeGuard.Test
+﻿namespace ScopeGuard.Test
 {
     internal class TestObj
     {
