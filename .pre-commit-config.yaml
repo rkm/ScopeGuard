@@ -1,28 +1,15 @@
 ---
-# See https://pre-commit.com for more information
-# See https://pre-commit.com/hooks.html for more hooks
-
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.0.1
     hooks:
-      # General
       - id: check-added-large-files
       - id: check-case-conflict
-      # - id: check-executables-have-shebangs
-      # - id: check-json
       - id: check-merge-conflict
-      # - id: check-toml
-      # - id: check-xml
-      # - id: check-yaml
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: mixed-line-ending
-      # - id: pretty-format-json
-      #   args: [--autofix, --indent=4]
-      # - id: sort-simple-yaml
       - id: trailing-whitespace
-    # General
   - repo: meta
     hooks:
       - id: check-hooks-apply
@@ -37,11 +24,6 @@ repos:
     hooks:
       - id: prettier
         args: [--config, .meta/prettierrc.yml]
-  # - repo: https://github.com/adrienverge/yamllint
-  #   rev: v1.24.2
-  #   hooks:
-  #       - id: yamllint
-  #         args: [-c, .meta/yamllint.yaml]
   - repo: https://github.com/rkm/mirrors-dotnet-format
     rev: "743494219718c4326530d05a8b083e620d24f021"
     hooks:
