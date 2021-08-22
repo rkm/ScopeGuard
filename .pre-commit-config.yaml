@@ -24,8 +24,7 @@ repos:
     hooks:
       - id: prettier
         args: [--config, .meta/prettierrc.yml]
-  - repo: https://github.com/rkm/mirrors-dotnet-format
-    rev: "743494219718c4326530d05a8b083e620d24f021"
+  - repo: https://github.com/dotnet/format
+    rev: "v5.1.225507"
     hooks:
       - id: dotnet-format
-        args: [--include]
