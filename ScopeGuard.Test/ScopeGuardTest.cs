@@ -60,7 +60,7 @@ namespace ScopeGuard.Test
             Assert.False(testObj.HasDeScoped);
 
             if (shouldThrow)
-                throw new Exception(message: "Oh noes!");
+                throw new Exception(message: "Oh no!");
         }
     }
 }
