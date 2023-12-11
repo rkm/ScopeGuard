@@ -12,7 +12,7 @@ and this project adheres to
 
 ## [1.1.0] - 2020-11-14
 
--   Initial public release
+- Initial public release
 
 [unreleased]: https://github.com/rkm/ScopeGuard/compare/v1.1.0...HEAD
 [1.1.0]: https://github.com/rkm/ScopeGuard/releases/tag/v1.1.0
